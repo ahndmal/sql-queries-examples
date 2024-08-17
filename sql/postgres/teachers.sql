@@ -1,4 +1,5 @@
-create database analysis;
+
+CREATE DATABASE analysis;
 
 CREATE TABLE teachers (
   id bigserial,
@@ -26,7 +27,7 @@ alter table teachers add column last_name_copy varchar(100);
 
 update teachers set last_name_copy = last_name;
 
-select teachers.school from teachers;
+SELECT teachers.school from teachers;
 
 COPY teachers TO 'C:\YourDirectory\teachers.txt'
 WITH (FORMAT CSV, HEADER, DELIMITER '|');

@@ -17,7 +17,7 @@ with multibyte encodings, such as character sets covering the Chinese, Japanese,
 Korean languages.
 */
 
-SELECT left('703-555-1212', 3),   --703
+SELECT left('703-555-1212', 3),   -- 703
        right('703-555-1212', 8),  -- 555-1212
        replace('bat', 'b', 'c');
 

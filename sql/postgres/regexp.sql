@@ -1,5 +1,4 @@
 
-
 SELECT
         regexp_match(original_text, '(?:C0|SO)[0-9]+') AS case_number,
         regexp_match(original_text, '\d{1,2}\/\d{1,2}\/\d{2}') AS date_1,

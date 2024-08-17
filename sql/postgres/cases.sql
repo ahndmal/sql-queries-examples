@@ -1,8 +1,8 @@
 
 /*
     CASE WHEN condition THEN result
-        WHEN another_condition THEN result
-        ELSE result
+         WHEN another_condition THEN result
+         ELSE result
     END
 */
 

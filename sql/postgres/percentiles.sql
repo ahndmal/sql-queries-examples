@@ -1,3 +1,4 @@
+
 -- Finding the Median with Percentile Functions
 
 SELECT sum(area_land)                    AS "County Sum",
@@ -11,8 +12,8 @@ SELECT percentile_cont(array [.25,.5,.75])
 FROM us_countries_2019;
 
 SELECT unnest(
-                       percentile_cont(array [.25,.5,.75])
-                       WITHIN GROUP (ORDER BY area_land)
+                  percentile_cont(array [.25,.5,.75])
+                  WITHIN GROUP (ORDER BY area_land)
        ) AS "quartiles"
 FROM us_countries_2019;
 

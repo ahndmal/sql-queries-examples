@@ -2,14 +2,14 @@
 CREATE EXTENSION tablefunc;
 
 SELECT *
- FROM crosstab('SELECT 
+  FROM crosstab('SELECT 
     office,
-   flavor,
+    flavor,
     xcount(*)
 FROM ice_cream_survey
 GROUP BY office, flavor
 ORDER BY office',
- 'SELECT flavor
+  'SELECT flavor
     FROM ice_cream_survey
     GROUP BY flavor
     ORDER BY flavor')
@@ -22,9 +22,9 @@ ORDER BY office',
 
 SELECT *
 FROM crosstab('SELECT
-                 station_name,
-                 date_part(''month'', observation_date),
-                 percentile_cont(.5)
+                  station_name,
+                  date_part(''month'', observation_date),
+                  percentile_cont(.5)
                     WITHIN GROUP (ORDER BY max_temp)
                FROM temperature_readings
                GROUP BY station_name,

@@ -1,9 +1,10 @@
-select count(*)
-from new_york_addresses;
 
-select *
-from new_york_addresses
-where id < 100;
+SELECT count(*)
+FROM new_york_addresses;
+
+SELECT *
+FROM new_york_addresses
+WHERE id < 100;
 
 ------ explain analyze
 
@@ -106,11 +107,11 @@ CREATE INDEX stabr2014_idx ON pls_fy2014_pupld14a (stabr);
 CREATE INDEX city2014_idx ON pls_fy2014_pupld14a (city);
 CREATE INDEX visits2014_idx ON pls_fy2014_pupld14a (visits);
 
-select count(*)
-from pls_fy2014_pupld14a;
+SELECT count(*)
+FROM pls_fy2014_pupld14a;
 
-select *
-from pls_fy2014_pupld14a;
+SELECT *
+FROM pls_fy2014_pupld14a;
 
 SELECT stabr
 FROM pls_fy2014_pupld14a
@@ -203,8 +204,8 @@ CREATE TABLE state_regions
     region varchar(20) NOT NULL
 );
 
-select *
-from state_regions;
+SELECT *
+FROM state_regions;
 
 START TRANSACTION;
 
@@ -232,8 +233,8 @@ CREATE TABLE acs_2011_2015_stats
     CHECK (pct_masters_higher <= pct_bachelors_higher)
 );
 
-select *
-from acs_2011_2015_stats;
+SELECT *
+FROM acs_2011_2015_stats;
 
 SELECT corr(median_hh_income, pct_bachelors_higher)
            AS bachelors_income_r
@@ -308,12 +309,6 @@ SELECT
 FROM fbi_crime_data_2015
 WHERE population >= 500000
 ORDER BY (property_crime::numeric / population) DESC;
-
-
-
-
-
-
 
 
 
