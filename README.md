@@ -24,6 +24,7 @@ shp2pgsql -I -s SRID -W encoding shapefile_name table_name | psql -d database -U
 
 https://www.postgresql.org/docs/current/static/app-psql.html
 
+```
    Command           |   Displays                                                                                          |
 ---------------------+-----------------------------------------------------------------------------------------------------+--
  \?                  | Commands available within psql, such as \dt to list tables.
@@ -41,4 +42,6 @@ https://www.postgresql.org/docs/current/static/app-psql.html
  \dx [pattern]       | Installed extensions
  \dt+                | list all tables in the database and their size
  \dt+ us*            | show only tables whose names begin with 'us'
+```
+
  
