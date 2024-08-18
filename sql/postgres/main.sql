@@ -7,4 +7,4 @@ SELECT |/ 10;
 SELECT sqrt(10);
 SELECT ||/ 10;
 SELECT 4 !;
-
+SELECT MOD(10, 2);
