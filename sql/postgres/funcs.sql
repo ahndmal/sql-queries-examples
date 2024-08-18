@@ -34,12 +34,16 @@ END;
 
 CREATE EXTENSION plpythonu;
 
+-- 
+
 CREATE OR REPLACE FUNCTION trim_county(input_string text)
 RETURNS text AS $$
     import re
     cleaned = re.sub(r' County', '', input_string)
     return cleaned
 $$ LANGUAGE plpythonu;
+
+-- remove all '!' from a string
 
 CREATE OR REPLACE FUNCTION RemoveExclamationMarks (s TEXT)
 RETURNS TEXT
@@ -55,4 +59,17 @@ SELECT
 FROM
   removeexclamationmarks;
 
+-- repeat string n times
+CREATE OR REPLACE FUNCTION fkt(i int, t text) RETURNS text LANGUAGE 'plpgsql' AS $$
+DECLARE res text := '';
+BEGIN
+  WHILE i>0 LOOP
+    i := i-1;
+    res := CONCAT(res,t);
+  END LOOP;
+  RETURN res;
+END;
+$$;
 
+SELECT s,n,fkt(n,s) AS res
+FROM repeatstr
